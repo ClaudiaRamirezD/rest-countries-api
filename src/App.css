@@ -1,18 +1,27 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-primary: "Nunito Sans", sans-serif;
   --font-300: 300;
   --font-600: 600;
   --font-800: 800;
-  --blue-900-dark-mode-elements: hsl(209, 23%, 22%);
-  --blue-950-dark-mode-background: hsl(207, 26%, 17%);
-  --grey-950-light-mode-text: hsl(200, 15%, 8%);
-  --grey-400-light-mode-input: hsl(0, 0%, 50%);
-  --grey-50-light-mode-background: hsl(0, 0%, 99%);
-  --white-dark-mode-text-light-mode-elements: hsl(0, 100%, 100%);
+  --dark-mode-elements: hsl(209, 23%, 22%);
+  --dark-mode-background: hsl(207, 26%, 17%);
+  --light-mode-text: hsl(200, 15%, 8%);
+  --light-mode-input: hsl(0, 0%, 50%);
+  --light-mode-background: hsl(0, 0%, 99%);
+  --dark-mode-text-light-mode-elements: hsl(0, 100%, 100%);
 }
 
 body {
   font-family: var(--font-primary);
+  background-color: var(--light-mode-background);
+  color: var(--light-mode-text);
+}
+
+body.dark {
+  background-color: var(--dark-mode-background);
+  color: var(--dark-mode-text-light-mode-elements);
 }
