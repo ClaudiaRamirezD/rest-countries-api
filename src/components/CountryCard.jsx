@@ -16,7 +16,7 @@ function CountryCard({ country }) {
                             <span className="font-bold">Population:</span> {country.population.toLocaleString()}
                         </p>
                         <p>
-                            <span className="font-bold">Region:</span> {country.region}
+                            <span className="font-bold">Region:</span> {country.region === "Americas" ? "America" : country.region}
                         </p>
                         <p>
                             <span className="font-bold">Capital:</span> {country.capital ? country.capital[0] : 'N/A'}
