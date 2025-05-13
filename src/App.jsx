@@ -1,9 +1,11 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect, useMemo } from 'react';
 import './App.css';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import RegionFilter from './components/RegionFilter';
 import CountryList from './components/CountryList';
+import CountryDetails from './components/CountryDetails';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -42,21 +44,37 @@ function App() {
   }, []);
 
   return (
-    <div className="container w-full font-[var(--font-primary)]">
-      <Header />
-      <div className="app bg-[var(--grey-50-light-mode-background)]">
-        <main className="p-4 py-8 flex flex-col items-center justify-center gap-8">
-          <SearchBar onSearch={handleSearch} />
-          <RegionFilter onFilter={handleFilter} />
-          {loading ? (
-            <p>Loading...</p>
-          ) : (
-            <CountryList countries={filteredCountries} />
-          )}
-          {error && <p className="text-red-500">{error}</p>}
-        </main>
+    <Router>
+      <div className="container w-full font-[var(--font-primary)]">
+        <Header />
+        <Routes>
+          {/* Main page */}
+          <Route
+            path="/"
+            element={
+              <div className="app bg-[var(--grey-50-light-mode-background)]">
+                <main className="p-4 py-8 flex flex-col items-center justify-center gap-8">
+                  <SearchBar onSearch={handleSearch} />
+                  <RegionFilter onFilter={handleFilter} />
+                  {loading ? (
+                    <p>Loading...</p>
+                  ) : (
+                    <CountryList countries={filteredCountries} />
+                  )}
+                  {error && <p className="text-red-500">{error}</p>}
+                </main>
+              </div>
+            }
+          />
+          {/* Country details */}
+          <Route
+            path="/country/:countryCode"
+            element={<CountryDetails countries={countries} />} 
+            
+          />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 

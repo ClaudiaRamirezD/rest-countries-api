@@ -12,7 +12,7 @@ function Header() {
     }
 
     return (
-        <header className='shadow-2xl w-full bg-white border-b-3 border-stone-100'>
+        <header className='shadow-xl w-full bg-white border-b-3 border-stone-100'>
             <div className="header-content flex justify-between items-center px-4 py-6 ">
                 <h1 className='text-black text-lg font-[var(--font-800)]'>Where in the world?</h1>
                 <div className="color-scheme text-[var( --grey-950-light-mode-text)] font-[var(--font-600)] flex gap-2 justify-center items-center cursor-pointer" onClick={toggleDarkMode}>

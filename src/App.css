@@ -12,3 +12,7 @@
   --grey-50-light-mode-background: hsl(0, 0%, 99%);
   --white-dark-mode-text-light-mode-elements: hsl(0, 100%, 100%);
 }
+
+body {
+  font-family: var(--font-primary);
+}
