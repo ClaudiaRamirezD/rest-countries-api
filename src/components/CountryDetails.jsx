@@ -21,7 +21,7 @@ function CountryDetails({ countries }) {
           {/* Botón de retroceso */}
           <button
               onClick={() => navigate(-1)}
-              className="inline-flex cursor-pointer items-center gap-2 self-start rounded border border-stone-200 bg-white px-6 py-1 font-[var(--font-primary)] shadow-lg dark:bg-[var(--dark-mode-elements)] dark:text-[var(--dark-mode-text-light-mode-elements)] dark:border-none "
+              className="flex cursor-pointer items-center gap-2 self-start rounded border border-stone-200 bg-white px-6 py-1 font-[var(--font-primary)] shadow-lg dark:bg-[var(--dark-mode-elements)] dark:text-[var(--dark-mode-text-light-mode-elements)] dark:border-none "
           >
               <span className="text-lg">←</span>
               Back
