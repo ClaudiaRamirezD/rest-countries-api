@@ -3,7 +3,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 function SearchBar({ onSearch }) {
     return (
-        <div className="dark:text-[var(--dark-mode-text-light-mode-elements)]rounded-md w-full border-1 border-stone-200 bg-[var(--white-dark-mode-text-light-mode-elements)] p-4 shadow-lg focus-within:border-[var(--light-mode-input)] dark:border-none dark:bg-[var(--dark-mode-elements)] dark:text-[var(--dark-mode-text-light-mode-elements)]">
+        <div className="h-full rounded-md border border-stone-200 bg-[var(--white-dark-mode-text-light-mode-elements)] p-4 shadow-lg focus-within:border-[var(--light-mode-input)] dark:border-none dark:bg-[var(--dark-mode-elements)] dark:text-[var(--dark-mode-text-light-mode-elements)]">
             <div className="flex items-center gap-6 px-4">
                 <FontAwesomeIcon
                     icon={faSearch}

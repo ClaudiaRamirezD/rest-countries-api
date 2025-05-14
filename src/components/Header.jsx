@@ -13,8 +13,8 @@ function Header({ resetFilters }) {
   };
 
   return (
-    <header className="w-full border-b-3 border-stone-100 bg-[var(--light-mode-background)] shadow-xl dark:border-none dark:bg-[var(--dark-mode-elements)]">
-      <div className="header-content flex items-center justify-between px-4 py-6">
+    <header className="w-full border-b-3 border-stone-100 bg-[var(--light-mode-background)] shadow-sm dark:border-none dark:bg-[var(--dark-mode-elements)]">
+      <div className="header-content flex items-center justify-between px-4 md:px-8 py-6 lg:px-16">
         <Link
           to="/"
           onClick={resetFilters}

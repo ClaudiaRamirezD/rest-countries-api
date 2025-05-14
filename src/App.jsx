@@ -49,36 +49,48 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="container w-full font-[var(--font-primary)]">
-        <Header resetFilters={resetFilters} />
-        <Routes>
-          {/* Main page */}
-          <Route
-            path="/"
-            element={
-              <div className="app bg-[var(--grey-50-light-mode-background)] text-[var(--grey-950-light-mode-text)]">
-                <main className="flex flex-col items-center justify-center gap-8 p-4 py-8">
-                  <SearchBar onSearch={handleSearch} />
-                  <RegionFilter onFilter={handleFilter} />
-                  {loading ? (
-                    <p>Loading...</p>
-                  ) : (
-                    <CountryList countries={filteredCountries} />
-                  )}
-                  {error && <p className="text-red-500">{error}</p>}
-                </main>
-              </div>
-            }
-          />
-          {/* Country details */}
-          <Route
-            path="/country/:countryCode"
-            element={<CountryDetails countries={countries} />}
-          />
-        </Routes>
-      </div>
-    </Router>
+      <Router>
+          <div className="w-full font-[var(--font-primary)]">
+              <Header resetFilters={resetFilters} />
+              <Routes>
+                  {/* Main page */}
+                  <Route
+                      path="/"
+                      element={
+                          <div className="app bg-[var(--grey-50-light-mode-background)] text-[var(--grey-950-light-mode-text)]">
+                              <main className="flex flex-col items-center justify-center gap-8 px-4 py-8 md:px-8">
+                                  <div className="flex w-full flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                                      <div className="w-full md:w-1/3">
+                                          <SearchBar onSearch={handleSearch} />
+                                      </div>
+                                      <div className="w-full md:w-auto md:self-end">
+                                          <RegionFilter
+                                              onFilter={handleFilter}
+                                          />
+                                      </div>
+                                  </div>
+                                  {loading ? (
+                                      <p>Loading...</p>
+                                  ) : (
+                                      <CountryList
+                                          countries={filteredCountries}
+                                      />
+                                  )}
+                                  {error && (
+                                      <p className="text-red-500">{error}</p>
+                                  )}
+                              </main>
+                          </div>
+                      }
+                  />
+                  {/* Country details */}
+                  <Route
+                      path="/country/:countryCode"
+                      element={<CountryDetails countries={countries} />}
+                  />
+              </Routes>
+          </div>
+      </Router>
   );
 }
 
