@@ -30,7 +30,7 @@ function CountryDetails({ countries }) {
             {/* Detalles del país */}
             <div className="flex flex-col items-center justify-center gap-10 py-4 md:flex-row md:justify-between lg:justify-evenly lg:gap-40">
                 <img
-                    className="w-full object-cover lg:max-w-2/5"
+                    className="w-full object-fit lg:max-w-2/5"
                     src={country.flags.png}
                     alt={`${country.name.common} flag`}
                 />
